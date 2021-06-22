@@ -1,82 +1,52 @@
 #Author: Praveen@your.domain.com
-
 Feature: Validating add customer flow
 
-  
   Scenario: Add Customer validation
-   Given user launches telecom application
-   And user click on add customer button
-   When user need to fill up the fields
-   And user click on submit button
-   Then user ver
-   
-   
-   ify customer id is generated
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Given user launches telecom application
+    And user click on add customer button
+    When user need to fill up the fields
+    And user click on submit button
+    Then user verify customer id is generated
+
+  Scenario: Add Customer validation by 1D list concept
+    Given user launches telecom application
+    And user click on add customer button
+    When user need to fill up the fields by oneDim list
+      | Stranger | Things | will@gmail.com | houstan | 78945687 |
+    And user click on submit button
+    Then user verify customer id is generated
+
+  Scenario: Add Customer validation by 1D map concept
+    Given user launches telecom application
+    And user click on add customer button
+    When user need to fill up the fields by oneDim map
+      | Fname    | Stranger       |
+      | LName    | Things         |
+      | Mail     | will@gmail.com |
+      | address  | houstan        |
+      | PhoneNum |       78945687 |
+    And user click on submit button
+    Then user verify customer id is generated
+
+  Scenario: Add Customer validation by 2D list concept
+    Given user launches telecom application
+    And user click on add customer button
+    When user need to fill up the fields by TwoDim list
+      | Stranger | Things | will@gmail.com   | houstan   | 78945687 |
+      | Mike     | Things | Mike@gmail.com   | Texas     | 78945687 |
+      | Dustin   | Things | Dustin@gmail.com | Las Vegas | 78945687 |
+      | Lucas    | Things | Lucas@gmail.com  | Brimgham  | 78945687 |
+    And user click on submit button
+    Then user verify customer id is generated
+
+  Scenario: Add Customer validation by 2D map concept
+    Given user launches telecom application
+    And user click on add customer button
+    When user need to fill up the fields by TwoDim map
+      | Fname    | Lname  | mail             | Addres    | Phne     |
+      | Mike     | Things | Mike@gmail.com   | Texas     | 78945687 |
+      | Dustin   | Things | Dustin@gmail.com | Las Vegas | 78945687 |
+      | Lucas    | Things | Lucas@gmail.com  | Brimgham  | 78945687 |
+      | Stranger | Things | will@gmail.com   | houstan   | 78945687 |
+    And user click on submit button
+    Then user verify customer id is generated
