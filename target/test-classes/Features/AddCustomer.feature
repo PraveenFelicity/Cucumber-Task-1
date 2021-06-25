@@ -4,13 +4,13 @@ Feature: Validating add customer flow
   Background: 
     And user click on add customer button
 
+  @run
   Scenario: Add Customer validation
-    #Given user launches telecom application
     When user need to fill up the fields
     And user click on submit button
     Then user verify customer id is generated
-    
-@OneDimList
+
+  @OneDimList
   Scenario: Add Customer validation by 1D list concept
     When user need to fill up the fields by oneDim list
       | Stranger | Things | will@gmail.com | houstan | 78945687 |

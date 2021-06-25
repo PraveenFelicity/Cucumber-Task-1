@@ -8,7 +8,10 @@ import cucumber.api.junit.Cucumber;
 @RunWith (Cucumber.class)
 @CucumberOptions(features = "src//test//resources//Features//",
                  glue = "com.telecom.stepdefinition",
-                 plugin = "html:target", monochrome = true, dryRun = false, tags = "@OneDimList") 
+                 plugin = "html:target",
+                 monochrome = true, 
+                 dryRun = false, 
+                 tags = {"@run"}) 
    
 public class TestRunner {
 
